@@ -80,7 +80,7 @@ function fetchAllMetrics() {
   
   // fetch the data
   var headers = { 'Authorization': 'Api-Token ' + api_key }
-  var url = 'https://' + tenant + '.sprint.dynatracelabs.com/api/v2/metrics';
+  var url = 'https://' + tenant + '/api/v2/metrics';
   
   // organize data for writing to the sheet
   var data = [["METRIC KEY", "DESCRIPTION"]];
@@ -152,7 +152,7 @@ function fetchDatapoints() {
   
   // fetch the data
   var headers = { 'Authorization': 'Api-Token ' + api_key }
-  var url = 'https://' + tenant + '.sprint.dynatracelabs.com/api/v2/metrics/query?metricSelector=' + metric + resolution + start + end;
+  var url = 'https://' + tenant + '/api/v2/metrics/query?metricSelector=' + metric + resolution + start + end;
   try {
     var result = UrlFetchApp.fetch(encodeURI(url), {'headers': headers});
   result = JSON.parse(result);

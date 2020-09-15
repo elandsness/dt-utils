@@ -125,7 +125,7 @@ function sendEvent() {
   // send the request to Dynatrace
   var headers = { 'Authorization': 'Api-Token ' + api_key,
                   'Content-Type': 'application/json' }
-  var url = 'https://' + tenant + '.sprint.dynatracelabs.com/api/v1/events';
+  var url = 'https://' + tenant + '/api/v1/events';
   var result = UrlFetchApp.fetch(encodeURI(url), {'headers': headers, 'method': 'post', 'payload': JSON.stringify(payload)});
   Logger.log(JSON.parse(result));
   

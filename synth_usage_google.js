@@ -59,7 +59,7 @@ function synthetic_usage_report() {
   var data = [];
   
   // fetch the mem used timeseries
-  var url = 'https://' + dt_tenant + '.live.dynatrace.com/api/v1/synthetic/monitors?Api-Token=' + dt_api_key;
+  var url = 'https://' + dt_tenant + '/api/v1/synthetic/monitors?Api-Token=' + dt_api_key;
   var result_monitors = UrlFetchApp.fetch(url, {'headers': {'accept': 'application/json'}});
   result_monitors = JSON.parse(result_monitors);
  
@@ -73,7 +73,7 @@ function synthetic_usage_report() {
   var monitors = []; // to store active monitor details
   var d_monitors = []; // to store disabled monitor details
   for (var x in tests){
-    url = 'https://' + dt_tenant + '.live.dynatrace.com/api/v1/synthetic/monitors/' + tests[x] + '?Api-Token=' + dt_api_key;
+    url = 'https://' + dt_tenant + '/api/v1/synthetic/monitors/' + tests[x] + '?Api-Token=' + dt_api_key;
     var result_monitor = UrlFetchApp.fetch(url, {'headers': {'accept': 'application/json'}});
     result_monitor = JSON.parse(result_monitor);
     var monitor = {};
@@ -100,9 +100,9 @@ function synthetic_usage_report() {
     monitor.steps_per_year = (((365*24*60)/result_monitor.frequencyMin) * monitor.steps) * result_monitor.locations.length;
     var dt_url; // link to test in Dynatrace
     if (result_monitor.type == 'HTTP'){
-      dt_url = 'https://' + dt_tenant + '.live.dynatrace.com/#httpcheckdetails;id=' + result_monitor.entityId;
+      dt_url = 'https://' + dt_tenant + '/#httpcheckdetails;id=' + result_monitor.entityId;
     } else {
-      dt_url = 'https://' + dt_tenant + '.live.dynatrace.com/#monitordetailkpm;webcheckId=' + result_monitor.entityId;
+      dt_url = 'https://' + dt_tenant + '/#monitordetailkpm;webcheckId=' + result_monitor.entityId;
     }
       
     if (monitor.enabled){
