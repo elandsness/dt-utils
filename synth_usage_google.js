@@ -36,11 +36,11 @@ function setupSheets() {
   var config_sheet = spreadsheet.getSheetByName('Config');
   config_sheet.getRange(1, 1, 1, 3).setValues([['Tenant ID', 'API Key', 'Cost per Action']])
     .setBackground('#0d7aba').setFontColor('#ffffff');
-  config_sheet.getRange(2, 1, 1, 3).setValues([['abc1234', 'SuP3rSecr3tKey!', '1.99']])
+  config_sheet.getRange(2, 1, 1, 3).setValues([['abc1234.live.dynatrace.com', 'SuP3rSecr3tKey!', '1.99']])
     .setBackground('#ffffff').setFontColor('#0d7aba');
   config_sheet.deleteColumns(4, config_sheet.getMaxColumns() - 3);
   config_sheet.deleteRows(3, config_sheet.getMaxRows() - 2);
-  config_sheet.setColumnWidth(1, 100).setColumnWidth(2, 250).setColumnWidth(3, 100);
+  config_sheet.setColumnWidth(1, 250).setColumnWidth(2, 250).setColumnWidth(3, 100);
   config_sheet.getRange(2, 3).setNumberFormat("$0.00000");
 }
 
