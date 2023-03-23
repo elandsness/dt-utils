@@ -6,7 +6,7 @@ All of these scripts utilize Google Apps Script. You can read the documentation 
 
 ### Steps to Use
 1. Create a new Google Sheet by navigating to [Google Sheets](https://sheets.google.com) and clicking on the "New Blank Spreadsheet" button.
-2. Once in the new sheet, access the "Tools" menu and select "<> Script editor". This will launch the Google Apps Script built-in IDE.
+2. Once in the new sheet, access the "Extensions" menu and select "<> Script editor". This will launch the Google Apps Script built-in IDE.
 3. Copy and paste the code example that you want to run into the script editor and save.
 4. From the drop down in the editor, select the "on_open" function that every example contains, and hit the. play button. You will be prompted to provide permissions for the script to perform certain functions as you. Navigate through the prompts accepting the permissions. You'll now have a "Dynatrace" menu that can be used for each example's functions.
 5. Finally, run the "Setup" function from the "Dynatrace" menu in the Spreadsheet to configure the proper tabs and labels to use the script example.
